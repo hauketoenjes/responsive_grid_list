@@ -9,19 +9,40 @@ import 'utils.dart';
 /// the most fitting items in row with [spacing] and [minItemWidth]
 ///
 abstract class AbstractResponsiveGridList extends StatelessWidget {
+  ///
+  /// Children of the resulting grid list
+  ///
   final List<Widget> children;
+
+  ///
+  /// The minimum item width of each individual item in the list. Can be smaller
+  /// if the viewport constraints are smaller
+  ///
   final double minItemWidth;
+
+  ///
+  /// The vertical and horizontal spacing between the items in the grid
+  ///
   final double spacing;
+
+  ///
+  /// [MainAxisAlignment] of each row in the grid list
+  ///
+  final MainAxisAlignment rowMainAxisAlignment;
 
   const AbstractResponsiveGridList(
     this.minItemWidth,
     this.spacing,
-    this.children, {
+    this.children,
+    this.rowMainAxisAlignment, {
     Key key,
   }) : super(key: key);
 
   ///
-  /// The max width of the current layout constraints
+  /// Method to generate a list of [ResponsiveGridRow]'s with spacing in between
+  /// them
+  ///
+  /// [maxWidth] is the maximum width of the current layout
   ///
   List<Widget> getResponsiveGridListItems(double maxWidth) {
     // Set the currentWidth to minItemWidth and itemsPerRow to one

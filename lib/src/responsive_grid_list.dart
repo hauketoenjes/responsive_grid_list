@@ -3,17 +3,16 @@ import 'package:flutter/widgets.dart';
 import 'abstract_responsive_grid_list.dart';
 
 ///
-/// A [ListView] containing [children] with [spacing] in between.
-///
-/// [minItemWidth] is the minimum item width that is returned in the list.
-/// The width can be less than this if there is not enough space in the Layout.
+/// An [AbstractResponsiveGridList] returning the grid inside a
+/// [ListView.builder()]
 ///
 class ResponsiveGridList extends AbstractResponsiveGridList {
   ResponsiveGridList({
     @required List<Widget> children,
     @required double minItemWidth,
     double spacing = 16,
-  }) : super(minItemWidth, spacing, children);
+    MainAxisAlignment rowMainAxisAlignment = MainAxisAlignment.start,
+  }) : super(minItemWidth, spacing, children, rowMainAxisAlignment);
 
   @override
   Widget build(BuildContext context) {

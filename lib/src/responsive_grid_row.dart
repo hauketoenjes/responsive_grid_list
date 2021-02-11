@@ -10,9 +10,26 @@ import 'utils.dart';
 /// modified through the [rowMainAxisAlignment] paramter.
 ///
 class ResponsiveGridRow extends StatelessWidget {
+  ///
+  /// The items in the row
+  ///
   final List<Widget> rowItems;
+
+  ///
+  /// The spacing between the items in the row
+  ///
   final double spacing;
+
+  ///
+  /// The width of the items in the row
+  ///
   final double itemWidth;
+
+  ///
+  /// The MainAxisAlignment of the row.
+  ///
+  /// Default's to [MainAxisAlignment.start].
+  ///
   final MainAxisAlignment rowMainAxisAlignment;
 
   const ResponsiveGridRow({

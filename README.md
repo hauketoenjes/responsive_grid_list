@@ -1,4 +1,4 @@
-# responsive_grid_list
+# Responsive Grid List
 
 A Flutter plugin to create responsive grid lists using `ListView.builder()` or `SliverList` with a `SliverChildBuilderDelegate`.
 
@@ -58,4 +58,9 @@ class MyResponsiveGridList extends AbstractResponsiveGridList{
   }
 }
 ```
+
+## Future Features
+- [ ] Optional padding at the edges of the grid
+- [ ] Optional delta in which the width of the children can vary instead of setting the just the minimum width
+- [ ] Option to constrain the height of the items to a fixed value
 
