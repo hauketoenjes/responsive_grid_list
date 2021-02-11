@@ -1,8 +1,10 @@
 name: responsive_grid_list
 description: Flutter plugin to create responsive grid lists
-version: 0.0.1
-author: Hauke Tönjes
-homepage: htoenjes.de
+version: 1.0.0
+publish_to: https://pub.dev
+homepage: https://htoenjes.de
+repository: https://github.com/hauketoenjes/responsive_grid_list
+issue_tracker: https://github.com/hauketoenjes/responsive_grid_list/issues
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
