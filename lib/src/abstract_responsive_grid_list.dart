@@ -35,7 +35,7 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
     this.spacing,
     this.children,
     this.rowMainAxisAlignment, {
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   ///

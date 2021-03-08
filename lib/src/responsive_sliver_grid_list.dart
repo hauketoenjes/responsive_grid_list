@@ -8,8 +8,8 @@ import 'abstract_responsive_grid_list.dart';
 ///
 class ResponsiveSliverGridList extends AbstractResponsiveGridList {
   ResponsiveSliverGridList({
-    @required List<Widget> children,
-    @required double minItemWidth,
+    required List<Widget> children,
+    required double minItemWidth,
     double spacing = 16,
     MainAxisAlignment rowMainAxisAlignment = MainAxisAlignment.start,
   }) : super(minItemWidth, spacing, children, rowMainAxisAlignment);

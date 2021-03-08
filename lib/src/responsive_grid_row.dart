@@ -33,10 +33,10 @@ class ResponsiveGridRow extends StatelessWidget {
   final MainAxisAlignment rowMainAxisAlignment;
 
   const ResponsiveGridRow({
-    Key key,
-    @required this.rowItems,
-    @required this.spacing,
-    @required this.itemWidth,
+    Key? key,
+    required this.rowItems,
+    required this.spacing,
+    required this.itemWidth,
     this.rowMainAxisAlignment = MainAxisAlignment.start,
   }) : super(key: key);
 
