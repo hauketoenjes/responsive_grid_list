@@ -6,43 +6,61 @@ import 'utils.dart';
 
 ///
 /// Abstract class providing the method [getResponsiveGridListItems] to calculate
-/// the most fitting items in row with [spacing] and [minItemWidth]
+/// the most fitting items in row with [spacing] and [minItemWidth].
 ///
 abstract class AbstractResponsiveGridList extends StatelessWidget {
   ///
-  /// Children of the resulting grid list
+  /// Children of the resulting grid list.
   ///
   final List<Widget> children;
 
   ///
   /// The minimum item width of each individual item in the list. Can be smaller
-  /// if the viewport constraints are smaller
+  /// if the viewport constraints are smaller.
   ///
   final double minItemWidth;
 
   ///
-  /// The vertical and horizontal spacing between the items in the grid
+  /// The horizontal spacing between the items in the grid.
   ///
-  final double spacing;
+  final double horizontalGridSpacing;
 
   ///
-  /// [MainAxisAlignment] of each row in the grid list
+  /// The vertical spacing between the items in the grid.
+  ///
+  final double verticalGridSpacing;
+
+  ///
+  /// The horizontal spacing around the grid.
+  ///
+  final double? horizontalGridMargin;
+
+  ///
+  /// The vertical spacing around the grid.
+  ///
+  final double? verticalGridMargin;
+
+  ///
+  /// [MainAxisAlignment] of each row in the grid list.
   ///
   final MainAxisAlignment rowMainAxisAlignment;
 
-  const AbstractResponsiveGridList(
-    this.minItemWidth,
-    this.spacing,
-    this.children,
-    this.rowMainAxisAlignment, {
+  const AbstractResponsiveGridList({
+    required this.minItemWidth,
+    required this.horizontalGridSpacing,
+    required this.verticalGridSpacing,
+    this.horizontalGridMargin,
+    this.verticalGridMargin,
+    required this.rowMainAxisAlignment,
+    required this.children,
     Key? key,
   }) : super(key: key);
 
   ///
   /// Method to generate a list of [ResponsiveGridRow]'s with spacing in between
-  /// them
+  /// them.
   ///
-  /// [maxWidth] is the maximum width of the current layout
+  /// [maxWidth] is the maximum width of the current layout.
   ///
   List<Widget> getResponsiveGridListItems(double maxWidth) {
     // Set the currentWidth to minItemWidth and itemsPerRow to one
@@ -50,13 +68,18 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
     var currentWidth = minItemWidth;
     var itemsPerRow = 1;
 
+    // Calculate with outer margin (vertical) if set
+    if (horizontalGridMargin != null) {
+      currentWidth += 2 * horizontalGridMargin!;
+    }
+
     // While another pair of spacing + minItemWidth fits the row, add it to
-    // the variables.
+    // the variables
     while (currentWidth < maxWidth) {
-      if (currentWidth + (minItemWidth + spacing) <= maxWidth) {
+      if (currentWidth + (minItemWidth + horizontalGridSpacing) <= maxWidth) {
         // If another spacing + item fits in the row, add one item to the row
         // and update the currentWidth
-        currentWidth += (minItemWidth + spacing);
+        currentWidth += (minItemWidth + horizontalGridSpacing);
         itemsPerRow++;
       } else {
         // If no other item + spacer fits into the row, break
@@ -69,8 +92,11 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
     var spacePerRow = itemsPerRow - 1;
 
     // Calculate the itemWidth that results from the maxWidth and number of
-    // spacers
-    var itemWidth = (maxWidth - (spacePerRow * spacing)) / itemsPerRow;
+    // spacers and outer margin (horizontal)
+    var itemWidth = (maxWidth -
+            (spacePerRow * horizontalGridSpacing) -
+            (2 * (horizontalGridMargin ?? 0))) /
+        itemsPerRow;
 
     // Partition the items into groups of itemsPerRow length and map them
     // to ResponsiveGridRow's
@@ -78,13 +104,26 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
         .map<Widget>(
           (e) => ResponsiveGridRow(
             rowItems: e,
-            spacing: spacing,
+            spacing: horizontalGridSpacing,
+            horizontalGridMargin: horizontalGridMargin,
             itemWidth: itemWidth,
           ),
         )
         .toList();
 
     // Join the rows width spacing in between them (vertical)
-    return joinWithWidget(items, SizedBox(height: spacing));
+    var responsiveGridListItems =
+        genericJoin<Widget>(items, SizedBox(height: verticalGridSpacing));
+
+    // Add outer margin (vertical) if set
+    if (verticalGridMargin != null) {
+      return [
+        SizedBox(height: verticalGridMargin),
+        ...responsiveGridListItems,
+        SizedBox(height: verticalGridMargin)
+      ];
+    }
+
+    return responsiveGridListItems;
   }
 }

@@ -17,7 +17,10 @@ A Responsive Grid List which uses `ListView.builder()` internally.
 
 ```dart
 ResponsiveGridList(
-    spacing: 16, // The vertical and horizontal spacing
+    horizontalGridSpacing: 16, // Horizontal space between grid items
+    horizontalGridSpacing: 16, // Vertical space between grid items
+    horizontalGridMargin: 50, // Horizontal space around the grid
+    verticalGridMargin: 50, // Vertical space around the grid
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
     children: [...], // The list of widgets in the list
 );
@@ -28,7 +31,10 @@ A Responsive Grid List which uses `SliverList` with a `SliverChildBuilderDelegat
 
 ```dart
 ResponsiveSliverGridList(
-    spacing: 16, // The vertical and horizontal spacing
+    horizontalGridSpacing: 16, // Horizontal space between grid items
+    verticalGridSpacing: 16, // Vertical space between grid items
+    horizontalGridMargin: 50, // Horizontal space around the grid
+    verticalGridMargin: 50, // Vertical space around the grid
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
     children: [...], // The list of widgets in the list
 );
@@ -60,7 +66,7 @@ class MyResponsiveGridList extends AbstractResponsiveGridList{
 ```
 
 ## Future Features
-- [ ] Optional padding at the edges of the grid
+- [x] Optional padding at the edges of the grid
 - [ ] Optional delta in which the width of the children can vary instead of setting the just the minimum width
 - [ ] Option to constrain the height of the items to a fixed value
 

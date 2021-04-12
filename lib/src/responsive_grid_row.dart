@@ -11,19 +11,22 @@ import 'utils.dart';
 ///
 class ResponsiveGridRow extends StatelessWidget {
   ///
-  /// The items in the row
+  /// The items in the row.
   ///
   final List<Widget> rowItems;
 
   ///
-  /// The spacing between the items in the row
+  /// The spacing between the items in the row.
   ///
   final double spacing;
 
   ///
-  /// The width of the items in the row
+  /// The width of the items in the row.
   ///
   final double itemWidth;
+
+  /// horizontal Margin around the grid.
+  final double? horizontalGridMargin;
 
   ///
   /// The MainAxisAlignment of the row.
@@ -36,6 +39,7 @@ class ResponsiveGridRow extends StatelessWidget {
     Key? key,
     required this.rowItems,
     required this.spacing,
+    this.horizontalGridMargin,
     required this.itemWidth,
     this.rowMainAxisAlignment = MainAxisAlignment.start,
   }) : super(key: key);
@@ -48,7 +52,16 @@ class ResponsiveGridRow extends StatelessWidget {
 
     // Join SizedBoxes in between the items with a fixed width of [spacing]
     var spacedRowItems =
-        joinWithWidget(sizedRowItems, SizedBox(width: spacing));
+        genericJoin<Widget>(sizedRowItems, SizedBox(width: spacing));
+
+    // Add outer margin, if not null
+    if (horizontalGridMargin != null) {
+      spacedRowItems = [
+        SizedBox(width: horizontalGridMargin),
+        ...spacedRowItems,
+        SizedBox(width: horizontalGridMargin)
+      ];
+    }
 
     return IntrinsicHeight(
       child: Row(

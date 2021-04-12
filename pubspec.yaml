@@ -1,6 +1,6 @@
 name: responsive_grid_list
 description: A Flutter plugin to create responsive grid lists using ListView.builder() or SliverList with a SliverChildBuilderDelegate.
-version: 1.1.0
+version: 1.2.0
 publish_to: https://pub.dev
 homepage: https://htoenjes.de
 repository: https://github.com/hauketoenjes/responsive_grid_list
@@ -11,7 +11,7 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  quiver: ^3.0.0
+  quiver: ^3.0.1
   flutter:
     sdk: flutter
 

@@ -8,11 +8,22 @@ import 'abstract_responsive_grid_list.dart';
 ///
 class ResponsiveGridList extends AbstractResponsiveGridList {
   ResponsiveGridList({
-    required List<Widget> children,
     required double minItemWidth,
-    double spacing = 16,
+    double horizontalGridSpacing = 16,
+    double verticalGridSpacing = 16,
+    double? horizontalGridMargin,
+    double? verticalGridMargin,
     MainAxisAlignment rowMainAxisAlignment = MainAxisAlignment.start,
-  }) : super(minItemWidth, spacing, children, rowMainAxisAlignment);
+    required List<Widget> children,
+  }) : super(
+          minItemWidth: minItemWidth,
+          horizontalGridSpacing: horizontalGridSpacing,
+          verticalGridSpacing: verticalGridSpacing,
+          horizontalGridMargin: horizontalGridMargin,
+          verticalGridMargin: verticalGridMargin,
+          rowMainAxisAlignment: rowMainAxisAlignment,
+          children: children,
+        );
 
   @override
   Widget build(BuildContext context) {

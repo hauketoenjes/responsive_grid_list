@@ -1,20 +1,18 @@
-import 'package:flutter/widgets.dart';
-
 ///
-/// Method which joins [widget] in between the items in [list].
+/// Method which joins [seperator] in between the items in [list].
 ///
-/// Does the same as the [Iterable.join()] method but instead of return a string,
-/// retuns the list with seperator widgets in between.
+/// Does the same as the [Iterable.join()] method but instead of returning a string,
+/// retuns the list with seperators in between.
 ///
-List<Widget> joinWithWidget(List<Widget> list, Widget widget) {
-  var out = <Widget>[];
+List<T> genericJoin<T>(List<T> list, T seperator) {
+  var out = <T>[];
   var iterator = list.iterator;
 
   if (!iterator.moveNext()) return out;
 
   out.add(iterator.current);
   while (iterator.moveNext()) {
-    out.add(widget);
+    out.add(seperator);
     out.add(iterator.current);
   }
   return out;

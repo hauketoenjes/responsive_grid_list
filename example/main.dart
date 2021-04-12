@@ -23,10 +23,15 @@ class DemoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Demo')),
       body: ResponsiveGridList(
+        horizontalGridSpacing: 16,
+        verticalGridSpacing: 16,
+        horizontalGridMargin: 50,
+        verticalGridMargin: 50,
         minItemWidth: 100,
         children: List.generate(
           100,
-          (index) => Card(
+          (index) => Container(
+            color: Colors.lightBlue,
             child: Padding(
               padding: EdgeInsets.all(32),
               child: Text(
