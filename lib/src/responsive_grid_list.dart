@@ -7,7 +7,7 @@ import 'abstract_responsive_grid_list.dart';
 /// [ListView.builder()]
 ///
 class ResponsiveGridList extends AbstractResponsiveGridList {
-  ResponsiveGridList({
+  const ResponsiveGridList({
     required double minItemWidth,
     double horizontalGridSpacing = 16,
     double verticalGridSpacing = 16,
@@ -30,7 +30,7 @@ class ResponsiveGridList extends AbstractResponsiveGridList {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         // Get the grid list items
-        var items = getResponsiveGridListItems(constraints.maxWidth);
+        final items = getResponsiveGridListItems(constraints.maxWidth);
 
         return ListView.builder(
           itemCount: items.length,

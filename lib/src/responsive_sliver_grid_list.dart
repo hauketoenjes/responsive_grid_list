@@ -7,7 +7,7 @@ import 'abstract_responsive_grid_list.dart';
 /// [SliverList] with a [SliverChildBuilderDelegate]
 ///
 class ResponsiveSliverGridList extends AbstractResponsiveGridList {
-  ResponsiveSliverGridList({
+  const ResponsiveSliverGridList({
     required double minItemWidth,
     double horizontalGridSpacing = 16,
     double verticalGridSpacing = 16,
@@ -30,7 +30,7 @@ class ResponsiveSliverGridList extends AbstractResponsiveGridList {
     return SliverLayoutBuilder(
       builder: (context, constraints) {
         // Get the grid list items
-        var items = getResponsiveGridListItems(constraints.crossAxisExtent);
+        final items = getResponsiveGridListItems(constraints.crossAxisExtent);
 
         // Return the SliverList with a SliverChildBuilderDelegate
         return SliverList(

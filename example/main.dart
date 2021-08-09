@@ -21,10 +21,8 @@ class DemoPage extends StatelessWidget {
     // and render it using a ResponsiveGridList
 
     return Scaffold(
-      appBar: AppBar(title: Text('Demo')),
+      appBar: AppBar(title: const Text('Demo')),
       body: ResponsiveGridList(
-        horizontalGridSpacing: 16,
-        verticalGridSpacing: 16,
         horizontalGridMargin: 50,
         verticalGridMargin: 50,
         minItemWidth: 100,
@@ -33,7 +31,7 @@ class DemoPage extends StatelessWidget {
           (index) => Container(
             color: Colors.lightBlue,
             child: Padding(
-              padding: EdgeInsets.all(32),
+              padding: const EdgeInsets.all(32),
               child: Text(
                 '$index',
                 textAlign: TextAlign.center,

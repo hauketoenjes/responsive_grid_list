@@ -5,8 +5,8 @@
 /// retuns the list with seperators in between.
 ///
 List<T> genericJoin<T>(List<T> list, T seperator) {
-  var out = <T>[];
-  var iterator = list.iterator;
+  final out = <T>[];
+  final iterator = list.iterator;
 
   if (!iterator.moveNext()) return out;
 

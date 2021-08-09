@@ -79,7 +79,7 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
       if (currentWidth + (minItemWidth + horizontalGridSpacing) <= maxWidth) {
         // If another spacing + item fits in the row, add one item to the row
         // and update the currentWidth
-        currentWidth += (minItemWidth + horizontalGridSpacing);
+        currentWidth += minItemWidth + horizontalGridSpacing;
         itemsPerRow++;
       } else {
         // If no other item + spacer fits into the row, break
@@ -89,18 +89,18 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
 
     // Calculate the spacers per row (they are only in between the items, not
     // at the edges)
-    var spacePerRow = itemsPerRow - 1;
+    final spacePerRow = itemsPerRow - 1;
 
     // Calculate the itemWidth that results from the maxWidth and number of
     // spacers and outer margin (horizontal)
-    var itemWidth = (maxWidth -
+    final itemWidth = (maxWidth -
             (spacePerRow * horizontalGridSpacing) -
             (2 * (horizontalGridMargin ?? 0))) /
         itemsPerRow;
 
     // Partition the items into groups of itemsPerRow length and map them
     // to ResponsiveGridRow's
-    var items = partition(children, itemsPerRow)
+    final items = partition(children, itemsPerRow)
         .map<Widget>(
           (e) => ResponsiveGridRow(
             rowItems: e,
@@ -112,7 +112,7 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
         .toList();
 
     // Join the rows width spacing in between them (vertical)
-    var responsiveGridListItems =
+    final responsiveGridListItems =
         genericJoin<Widget>(items, SizedBox(height: verticalGridSpacing));
 
     // Add outer margin (vertical) if set

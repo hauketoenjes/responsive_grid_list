@@ -11,11 +11,11 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  quiver: ^3.0.1
   flutter:
     sdk: flutter
+  quiver: ^3.0.1
 
 dev_dependencies:
-  pedantic: ^1.11.0
+  lint: ^1.5.3
 
 flutter:

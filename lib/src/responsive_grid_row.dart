@@ -47,7 +47,7 @@ class ResponsiveGridRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Wrap the items with a SizedBox of width [itemWidth]
-    var sizedRowItems =
+    final sizedRowItems =
         rowItems.map((e) => SizedBox(width: itemWidth, child: e)).toList();
 
     // Join SizedBoxes in between the items with a fixed width of [spacing]
