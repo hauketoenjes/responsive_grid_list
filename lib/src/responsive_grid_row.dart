@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import 'utils.dart';
+import 'extensions/list_extensions.dart';
 
 ///
 /// Creates a row of [rowItems.length] size with a width of [itemWidth] and
@@ -51,8 +51,7 @@ class ResponsiveGridRow extends StatelessWidget {
         rowItems.map((e) => SizedBox(width: itemWidth, child: e)).toList();
 
     // Join SizedBoxes in between the items with a fixed width of [spacing]
-    var spacedRowItems =
-        genericJoin<Widget>(sizedRowItems, SizedBox(width: spacing));
+    var spacedRowItems = sizedRowItems.genericJoin(SizedBox(width: spacing));
 
     // Add outer margin, if not null
     if (horizontalGridMargin != null) {

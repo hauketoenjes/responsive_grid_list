@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:quiver/iterables.dart';
 
+import 'extensions/list_extensions.dart';
 import 'responsive_grid_row.dart';
-import 'utils.dart';
 
 ///
 /// Abstract class providing the method [getResponsiveGridListItems] to calculate
@@ -113,7 +113,7 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
 
     // Join the rows width spacing in between them (vertical)
     final responsiveGridListItems =
-        genericJoin<Widget>(items, SizedBox(height: verticalGridSpacing));
+        items.genericJoin(SizedBox(height: verticalGridSpacing));
 
     // Add outer margin (vertical) if set
     if (verticalGridMargin != null) {

@@ -35,6 +35,7 @@ class DemoPage extends StatelessWidget {
               child: Text(
                 '$index',
                 textAlign: TextAlign.center,
+                style: const TextStyle(color: Colors.white),
               ),
             ),
           ),
