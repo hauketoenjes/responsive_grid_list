@@ -6,6 +6,12 @@ The provided Widgets essentially work like a Flutter `Wrap` Widget but they are 
 
 The items in the grid are all the same width and have the same height per row. This means when a `Card` widget for example is higher because of a large description or so, the whole row will get higher. The row after that can be lower since it will be the height of it's highest child.
 
+# Screenshots
+
+Mobile | Desktop
+:-:|:-:
+<img alt="Mobile Example" src="screenshots/mobile.png"/>|<img alt="Mobile Example" src="screenshots/desktop.png"/>
+
 ## Usage
 ```dart
 import 'package:responsive_grid_list/responsive_grid_list.dart';

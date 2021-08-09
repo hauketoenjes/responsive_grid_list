@@ -1,3 +1,7 @@
+## [1.2.1] - 09.08.2021
+
+- Update README
+
 ## [1.2.0] - 12.04.2021
 
 - Added ability to add spacing around the grid with `horizontalGridMargin` and `verticallGridMargin`
