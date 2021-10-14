@@ -28,6 +28,7 @@ ResponsiveGridList(
     horizontalGridMargin: 50, // Horizontal space around the grid
     verticalGridMargin: 50, // Vertical space around the grid
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
+    shrinkWrap: true, // shrinkWrap property of the ListView.builder()
     children: [...], // The list of widgets in the list
 );
 ```

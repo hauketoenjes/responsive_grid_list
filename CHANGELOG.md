@@ -1,3 +1,7 @@
+## [1.2.2] - 14.10.2021
+
+- Add `shrinkWrap` property for `ResponsiveGridList`
+
 ## [1.2.1] - 09.08.2021
 
 - Update README
