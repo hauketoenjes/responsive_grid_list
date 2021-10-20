@@ -3,14 +3,30 @@ import 'package:flutter/widgets.dart';
 import 'abstract_responsive_grid_list.dart';
 
 ///
-/// An [AbstractResponsiveGridList] returning the grid inside a
-/// [ListView.builder()]
+/// An [AbstractResponsiveGridList] returning the grid items as list of [Widget]s
+/// in a builder function. This allows for use in any kind of List or Column.
 ///
-class ResponsiveGridList extends AbstractResponsiveGridList {
-  /// shrinkWrap property of [ListView.builder].
-  final bool shrinkWrap;
+class ResponsiveGridListBuilder extends AbstractResponsiveGridList {
+  ///
+  ///  Builder Function to use [items] in any kind of list.
+  ///
+  /// e.g:
+  ///
+  /// ```dart
+  /// ResponsiveGridListBuilder(
+  ///   minItemWidth: 200,
+  ///   gridItems: [Text('Test')],
+  ///   builder: (context, items){
+  ///     return ListView(
+  ///       children: items,
+  ///     );
+  ///   },
+  /// )
+  /// ```
+  ///
+  final Widget Function(BuildContext context, List<Widget> items) builder;
 
-  const ResponsiveGridList({
+  const ResponsiveGridListBuilder({
     required double minItemWidth,
     int? maxItemsPerRow,
     double horizontalGridSpacing = 16,
@@ -18,8 +34,8 @@ class ResponsiveGridList extends AbstractResponsiveGridList {
     double? horizontalGridMargin,
     double? verticalGridMargin,
     MainAxisAlignment rowMainAxisAlignment = MainAxisAlignment.start,
-    this.shrinkWrap = false,
-    required List<Widget> children,
+    required List<Widget> gridItems,
+    required this.builder,
   }) : super(
           minItemWidth: minItemWidth,
           maxItemsPerRow: maxItemsPerRow,
@@ -28,7 +44,7 @@ class ResponsiveGridList extends AbstractResponsiveGridList {
           horizontalGridMargin: horizontalGridMargin,
           verticalGridMargin: verticalGridMargin,
           rowMainAxisAlignment: rowMainAxisAlignment,
-          children: children,
+          children: gridItems,
         );
 
   @override
@@ -38,13 +54,7 @@ class ResponsiveGridList extends AbstractResponsiveGridList {
         // Get the grid list items
         final items = getResponsiveGridListItems(constraints.maxWidth);
 
-        return ListView.builder(
-          itemCount: items.length,
-          shrinkWrap: shrinkWrap,
-          itemBuilder: (BuildContext context, int index) {
-            return items[index];
-          },
-        );
+        return builder(context, items);
       },
     );
   }

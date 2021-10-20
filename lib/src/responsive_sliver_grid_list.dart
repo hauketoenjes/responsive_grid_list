@@ -9,6 +9,7 @@ import 'abstract_responsive_grid_list.dart';
 class ResponsiveSliverGridList extends AbstractResponsiveGridList {
   const ResponsiveSliverGridList({
     required double minItemWidth,
+    int? maxItemsPerRow,
     double horizontalGridSpacing = 16,
     double verticalGridSpacing = 16,
     double? horizontalGridMargin,
@@ -17,6 +18,7 @@ class ResponsiveSliverGridList extends AbstractResponsiveGridList {
     required List<Widget> children,
   }) : super(
           minItemWidth: minItemWidth,
+          maxItemsPerRow: maxItemsPerRow,
           horizontalGridSpacing: horizontalGridSpacing,
           verticalGridSpacing: verticalGridSpacing,
           horizontalGridMargin: horizontalGridMargin,

@@ -1,6 +1,6 @@
 # Responsive Grid List
 
-A Flutter plugin to create responsive grid lists using `ListView.builder()` or `SliverList` with a `SliverChildBuilderDelegate`.
+A Flutter plugin to create responsive grid lists using `ListView.builder()`, `SliverList` with a `SliverChildBuilderDelegate` or any other list.
 
 The provided Widgets essentially work like a Flutter `Wrap` Widget but they are more performant with large lists because of the internal use of `ListView.builder()` functions. 
 
@@ -28,6 +28,7 @@ ResponsiveGridList(
     horizontalGridMargin: 50, // Horizontal space around the grid
     verticalGridMargin: 50, // Vertical space around the grid
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
+    maxItemsPerRow, // The maximum items to show in a single row. Can be useful on large screens
     shrinkWrap: true, // shrinkWrap property of the ListView.builder()
     children: [...], // The list of widgets in the list
 );
@@ -43,7 +44,28 @@ ResponsiveSliverGridList(
     horizontalGridMargin: 50, // Horizontal space around the grid
     verticalGridMargin: 50, // Vertical space around the grid
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
+    maxItemsPerRow, // The maximum items to show in a single row. Can be useful on large screens
     children: [...], // The list of widgets in the list
+);
+```
+
+### ResponsiveGridListBuilder
+
+A Responsive Grid List which offers a `builder` in which every List / Column can be used with this package.
+
+```dart
+ResponsiveGridList(
+    horizontalGridSpacing: 16, // Horizontal space between grid items
+    horizontalGridSpacing: 16, // Vertical space between grid items
+    horizontalGridMargin: 50, // Horizontal space around the grid
+    verticalGridMargin: 50, // Vertical space around the grid
+    minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
+    maxItemsPerRow, // The maximum items to show in a single row. Can be useful on large screens
+    gridItems: [...], // The list of widgets in the grid
+    builder: (context, items) {
+      // Place to build a List or Column to access all properties.
+      // Set [items] as children attribute for example.
+    }
 );
 ```
 
@@ -74,6 +96,9 @@ class MyResponsiveGridList extends AbstractResponsiveGridList{
 
 ## Future Features
 - [x] Optional padding at the edges of the grid
+- [ ] Unit tests
 - [ ] Optional delta in which the width of the children can vary instead of setting the just the minimum width
 - [ ] Option to constrain the height of the items to a fixed value
+  - Probably better to use the Flutter `GridView` instead. It offers `aspectRation`.
+
 

@@ -6,7 +6,10 @@ import 'responsive_grid_row.dart';
 
 ///
 /// Abstract class providing the method [getResponsiveGridListItems] to calculate
-/// the most fitting items in row with [spacing] and [minItemWidth].
+/// the most fitting items in row with [horizontalGridSpacing], [verticalGridSpacing]
+///  and [minItemWidth].
+///
+/// The maximum number of items per row can be constrained with [maxItemsPerRow].
 ///
 abstract class AbstractResponsiveGridList extends StatelessWidget {
   ///
@@ -19,6 +22,16 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
   /// if the viewport constraints are smaller.
   ///
   final double minItemWidth;
+
+  ///
+  /// Maximum items to show per row. By default the package shows all items that
+  /// fit into the available space according to [minItemWidth].
+  ///
+  /// Note that this should only be used when limiting items on large screens since
+  /// it will stretch [maxItemsPerRow] items accross the whole width when maximum
+  /// is reached. This can result in a large differene to [minItemWidth].
+  ///
+  final int? maxItemsPerRow;
 
   ///
   /// The horizontal spacing between the items in the grid.
@@ -47,6 +60,7 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
 
   const AbstractResponsiveGridList({
     required this.minItemWidth,
+    this.maxItemsPerRow,
     required this.horizontalGridSpacing,
     required this.verticalGridSpacing,
     this.horizontalGridMargin,
@@ -54,7 +68,15 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
     required this.rowMainAxisAlignment,
     required this.children,
     Key? key,
-  }) : super(key: key);
+  })  : assert(
+          minItemWidth > 0,
+          'minItemWidth has to be > 0. It instead was set to $minItemWidth',
+        ),
+        assert(
+          maxItemsPerRow == null || maxItemsPerRow >= 1,
+          'maxItemsPerRow can only be null or >= 1. It instead was set to $maxItemsPerRow',
+        ),
+        super(key: key);
 
   ///
   /// Method to generate a list of [ResponsiveGridRow]'s with spacing in between
@@ -74,8 +96,9 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
     }
 
     // While another pair of spacing + minItemWidth fits the row, add it to
-    // the variables
-    while (currentWidth < maxWidth) {
+    // the variables. Only add items while maxItemsPerRow is not reached.
+    while (currentWidth < maxWidth &&
+        (maxItemsPerRow == null || itemsPerRow < maxItemsPerRow!)) {
       if (currentWidth + (minItemWidth + horizontalGridSpacing) <= maxWidth) {
         // If another spacing + item fits in the row, add one item to the row
         // and update the currentWidth

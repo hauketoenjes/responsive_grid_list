@@ -1,3 +1,7 @@
+## [1.2.3] - 20.10.2021
+- Add `maxItemsPerRow` property
+- Add `ResponsiveGridListBuilder` to allow usage with any List / Column.
+
 ## [1.2.2] - 14.10.2021
 
 - Add `shrinkWrap` property for `ResponsiveGridList`
