@@ -28,7 +28,7 @@ ResponsiveGridList(
     horizontalGridMargin: 50, // Horizontal space around the grid
     verticalGridMargin: 50, // Vertical space around the grid
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
-    maxItemsPerRow, // The maximum items to show in a single row. Can be useful on large screens
+    maxItemsPerRow: 2, // The maximum items to show in a single row. Can be useful on large screens
     shrinkWrap: true, // shrinkWrap property of the ListView.builder()
     children: [...], // The list of widgets in the list
 );
@@ -60,7 +60,7 @@ ResponsiveGridList(
     horizontalGridMargin: 50, // Horizontal space around the grid
     verticalGridMargin: 50, // Vertical space around the grid
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
-    maxItemsPerRow, // The maximum items to show in a single row. Can be useful on large screens
+    maxItemsPerRow: 2, // The maximum items to show in a single row. Can be useful on large screens
     gridItems: [...], // The list of widgets in the grid
     builder: (context, items) {
       // Place to build a List or Column to access all properties.
