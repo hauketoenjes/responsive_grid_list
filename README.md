@@ -54,7 +54,7 @@ ResponsiveSliverGridList(
 A Responsive Grid List which offers a `builder` in which every List / Column can be used with this package.
 
 ```dart
-ResponsiveGridList(
+ResponsiveGridListBuilder(
     horizontalGridSpacing: 16, // Horizontal space between grid items
     horizontalGridSpacing: 16, // Vertical space between grid items
     horizontalGridMargin: 50, // Horizontal space around the grid
