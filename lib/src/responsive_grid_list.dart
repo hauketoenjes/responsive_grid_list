@@ -12,6 +12,7 @@ class ResponsiveGridList extends AbstractResponsiveGridList {
 
   const ResponsiveGridList({
     required double minItemWidth,
+    int minItemsPerRow = 1,
     int? maxItemsPerRow,
     double horizontalGridSpacing = 16,
     double verticalGridSpacing = 16,
@@ -22,6 +23,7 @@ class ResponsiveGridList extends AbstractResponsiveGridList {
     required List<Widget> children,
   }) : super(
           minItemWidth: minItemWidth,
+          minItemsPerRow: minItemsPerRow,
           maxItemsPerRow: maxItemsPerRow,
           horizontalGridSpacing: horizontalGridSpacing,
           verticalGridSpacing: verticalGridSpacing,

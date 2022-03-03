@@ -28,7 +28,8 @@ ResponsiveGridList(
     horizontalGridMargin: 50, // Horizontal space around the grid
     verticalGridMargin: 50, // Vertical space around the grid
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
-    maxItemsPerRow: 2, // The maximum items to show in a single row. Can be useful on large screens
+    minItemsPerRow: 2, // The minimum items to show in a single row. Takes precedence over minItemWidth
+    maxItemsPerRow: 5, // The maximum items to show in a single row. Can be useful on large screens
     shrinkWrap: true, // shrinkWrap property of the ListView.builder()
     children: [...], // The list of widgets in the list
 );
@@ -44,7 +45,8 @@ ResponsiveSliverGridList(
     horizontalGridMargin: 50, // Horizontal space around the grid
     verticalGridMargin: 50, // Vertical space around the grid
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
-    maxItemsPerRow, // The maximum items to show in a single row. Can be useful on large screens
+    minItemsPerRow: 2, // The minimum items to show in a single row. Takes precedence over minItemWidth
+    maxItemsPerRow: 5, // The maximum items to show in a single row. Can be useful on large screens
     children: [...], // The list of widgets in the list
 );
 ```
@@ -60,7 +62,8 @@ ResponsiveGridListBuilder(
     horizontalGridMargin: 50, // Horizontal space around the grid
     verticalGridMargin: 50, // Vertical space around the grid
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
-    maxItemsPerRow: 2, // The maximum items to show in a single row. Can be useful on large screens
+    minItemsPerRow: 2, // The minimum items to show in a single row. Takes precedence over minItemWidth
+    maxItemsPerRow: 5, // The maximum items to show in a single row. Can be useful on large screens
     gridItems: [...], // The list of widgets in the grid
     builder: (context, items) {
       // Place to build a List or Column to access all properties.
@@ -100,5 +103,3 @@ class MyResponsiveGridList extends AbstractResponsiveGridList{
 - [ ] Optional delta in which the width of the children can vary instead of setting the just the minimum width
 - [ ] Option to constrain the height of the items to a fixed value
   - Probably better to use the Flutter `GridView` instead. It offers `aspectRation`.
-
-
