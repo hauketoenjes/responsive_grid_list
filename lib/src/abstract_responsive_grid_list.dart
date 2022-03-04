@@ -35,8 +35,8 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
   /// fit into the available space according to [minItemWidth].
   ///
   /// Note that this should only be used when limiting items on large screens since
-  /// it will stretch [maxItemsPerRow] items accross the whole width when maximum
-  /// is reached. This can result in a large differene to [minItemWidth].
+  /// it will stretch [maxItemsPerRow] items across the whole width when maximum
+  /// is reached. This can result in a large difference to [minItemWidth].
   ///
   final int? maxItemsPerRow;
 
