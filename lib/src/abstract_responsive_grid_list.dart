@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:quiver/iterables.dart';
 
-import 'extensions/list_extensions.dart';
-import 'responsive_grid_row.dart';
+import 'package:responsive_grid_list/src/extensions/list_extensions.dart';
+import 'package:responsive_grid_list/src/responsive_grid_row.dart';
 
 ///
 /// Abstract class providing the method [getResponsiveGridListItems] to calculate

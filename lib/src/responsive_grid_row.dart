@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 
-import 'extensions/list_extensions.dart';
+import 'package:responsive_grid_list/src/extensions/list_extensions.dart';
 
 ///
 /// Creates a row of [rowItems.length] size with a width of [itemWidth] and
 /// [spacing] in between them.
 ///
 /// The default [MainAxisAlignment] of the returned row is [start]. It can be
-/// modified through the [rowMainAxisAlignment] paramter.
+/// modified through the [rowMainAxisAlignment] parameter.
 ///
 class ResponsiveGridRow extends StatelessWidget {
   ///

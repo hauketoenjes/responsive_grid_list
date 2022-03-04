@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import 'abstract_responsive_grid_list.dart';
+import 'package:responsive_grid_list/src/abstract_responsive_grid_list.dart';
 
 ///
 /// An [AbstractResponsiveGridList] returning the grid items as list of [Widget]s
