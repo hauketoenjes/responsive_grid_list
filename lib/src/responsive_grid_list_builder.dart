@@ -28,6 +28,7 @@ class ResponsiveGridListBuilder extends AbstractResponsiveGridList {
 
   const ResponsiveGridListBuilder({
     required double minItemWidth,
+    int minItemsPerRow = 1,
     int? maxItemsPerRow,
     double horizontalGridSpacing = 16,
     double verticalGridSpacing = 16,
@@ -38,6 +39,7 @@ class ResponsiveGridListBuilder extends AbstractResponsiveGridList {
     required this.builder,
   }) : super(
           minItemWidth: minItemWidth,
+          minItemsPerRow: minItemsPerRow,
           maxItemsPerRow: maxItemsPerRow,
           horizontalGridSpacing: horizontalGridSpacing,
           verticalGridSpacing: verticalGridSpacing,

@@ -24,6 +24,13 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
   final double minItemWidth;
 
   ///
+  /// Minimum items to show per row. If this is set to a value higher than 1,
+  /// this takes precedence over [minItemWidth] and allows items to be smaller
+  /// than [minItemWidth] to fit at least [minItemsPerRow] items.
+  ///
+  final int minItemsPerRow;
+
+  ///
   /// Maximum items to show per row. By default the package shows all items that
   /// fit into the available space according to [minItemWidth].
   ///
@@ -60,6 +67,7 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
 
   const AbstractResponsiveGridList({
     required this.minItemWidth,
+    required this.minItemsPerRow,
     this.maxItemsPerRow,
     required this.horizontalGridSpacing,
     required this.verticalGridSpacing,
@@ -73,8 +81,12 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
           'minItemWidth has to be > 0. It instead was set to $minItemWidth',
         ),
         assert(
-          maxItemsPerRow == null || maxItemsPerRow >= 1,
-          'maxItemsPerRow can only be null or >= 1. It instead was set to $maxItemsPerRow',
+          minItemsPerRow > 0,
+          'minItemsPerRow has to be > 0. It instead was set to $minItemsPerRow',
+        ),
+        assert(
+          maxItemsPerRow == null || maxItemsPerRow >= minItemsPerRow,
+          'maxItemsPerRow can only be null or >= minItemsPerRow ($minItemsPerRow). It instead was set to $maxItemsPerRow',
         ),
         super(key: key);
 
@@ -85,12 +97,14 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
   /// [maxWidth] is the maximum width of the current layout.
   ///
   List<Widget> getResponsiveGridListItems(double maxWidth) {
-    // Set the currentWidth to minItemWidth and itemsPerRow to one
-    // since this is the minimum that is needed per row.
-    var currentWidth = minItemWidth;
-    var itemsPerRow = 1;
+    // Start with the minimum allowed number of items per row.
+    var itemsPerRow = minItemsPerRow;
 
-    // Calculate with outer margin (vertical) if set
+    // Calculate the current width according to the items per row
+    var currentWidth =
+        itemsPerRow * minItemWidth + (itemsPerRow - 1) * horizontalGridSpacing;
+
+    // Add outer margin (vertical) if set
     if (horizontalGridMargin != null) {
       currentWidth += 2 * horizontalGridMargin!;
     }
