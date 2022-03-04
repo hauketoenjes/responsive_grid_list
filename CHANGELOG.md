@@ -15,7 +15,7 @@
 
 ## [1.2.0] - 12.04.2021
 
-- Added ability to add spacing around the grid with `horizontalGridMargin` and `verticallGridMargin`
+- Added ability to add spacing around the grid with `horizontalGridMargin` and `verticalGridMargin`
 - Added ability to customize horizontal and vertical spacing between grid items with `horizontalGridSpacing` and `verticalGridSpacing`
 
 ### Migrating from version [1.1.0]
