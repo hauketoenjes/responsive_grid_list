@@ -1,3 +1,6 @@
+## [1.2.4] - 04.03.2022
+- Add `minItemsPerRow` property
+
 ## [1.2.3] - 20.10.2021
 - Add `maxItemsPerRow` property
 - Add `ResponsiveGridListBuilder` to allow usage with any List / Column.
