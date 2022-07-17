@@ -1,4 +1,4 @@
-![Pub Version](https://img.shields.io/pub/v/responsive_grid_list)
+[![Pub Version](https://img.shields.io/pub/v/responsive_grid_list)](https://pub.dev/packages/responsive_grid_list)
 [![codecov](https://codecov.io/gh/hauketoenjes/responsive_grid_list/branch/main/graph/badge.svg?token=RFLRJ6R0U0)](https://codecov.io/gh/hauketoenjes/responsive_grid_list)
 [![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
 
