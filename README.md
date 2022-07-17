@@ -106,7 +106,7 @@ class MyResponsiveGridList extends AbstractResponsiveGridList{
 ## Future Features
 
 - [x] Optional padding at the edges of the grid
-- [ ] Unit tests
+- [x] Tests
 - [ ] Optional delta in which the width of the children can vary instead of setting the just the minimum width
 - [ ] Option to constrain the height of the items to a fixed value
   - Probably better to use the Flutter `GridView` instead. It offers `aspectRation`.
