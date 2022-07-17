@@ -1,18 +1,23 @@
+![Pub Version](https://img.shields.io/pub/v/responsive_grid_list)
+[![codecov](https://codecov.io/gh/hauketoenjes/responsive_grid_list/branch/main/graph/badge.svg?token=RFLRJ6R0U0)](https://codecov.io/gh/hauketoenjes/responsive_grid_list)
+[![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
+
 # Responsive Grid List
 
 A Flutter plugin to create responsive grid lists using `ListView.builder()`, `SliverList` with a `SliverChildBuilderDelegate` or any other list.
 
-The provided Widgets essentially work like a Flutter `Wrap` Widget but they are more performant with large lists because of the internal use of `ListView.builder()` functions. 
+The provided Widgets essentially work like a Flutter `Wrap` Widget but they are more performant with large lists because of the internal use of `ListView.builder()` functions.
 
 The items in the grid are all the same width and have the same height per row. This means when a `Card` widget for example is higher because of a large description or so, the whole row will get higher. The row after that can be lower since it will be the height of it's highest child.
 
 ## Screenshots
 
-Mobile | Desktop
-:-:|:-:
-<img alt="Mobile Example" src="https://raw.githubusercontent.com/hauketoenjes/responsive_grid_list/main/screenshots/mobile.png"/>|<img alt="Mobile Example" src="https://raw.githubusercontent.com/hauketoenjes/responsive_grid_list/main/screenshots/desktop.png"/>
+|                                                              Mobile                                                               |                                                              Desktop                                                               |
+| :-------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+| <img alt="Mobile Example" src="https://raw.githubusercontent.com/hauketoenjes/responsive_grid_list/main/screenshots/mobile.png"/> | <img alt="Mobile Example" src="https://raw.githubusercontent.com/hauketoenjes/responsive_grid_list/main/screenshots/desktop.png"/> |
 
 ## Usage
+
 ```dart
 import 'package:responsive_grid_list/responsive_grid_list.dart';
 ```
@@ -34,6 +39,7 @@ ResponsiveGridList(
     children: [...], // The list of widgets in the list
 );
 ```
+
 ### ResponsiveSliverGridList
 
 A Responsive Grid List which uses `SliverList` with a `SliverChildBuilderDelegate` internally.
@@ -85,8 +91,8 @@ class MyResponsiveGridList extends AbstractResponsiveGridList{
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        
-        // The abstract class has a function to generate the grid from 
+
+        // The abstract class has a function to generate the grid from
         // the constructor's paramters and the layout constraints max width
         var items = getResponsiveGridListItems(constraints.maxWidth);
 
@@ -98,6 +104,7 @@ class MyResponsiveGridList extends AbstractResponsiveGridList{
 ```
 
 ## Future Features
+
 - [x] Optional padding at the edges of the grid
 - [ ] Unit tests
 - [ ] Optional delta in which the width of the children can vary instead of setting the just the minimum width

@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:quiver/iterables.dart';
-
 import 'package:responsive_grid_list/src/extensions/list_extensions.dart';
 import 'package:responsive_grid_list/src/responsive_grid_row.dart';
 
@@ -77,6 +76,7 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
     required this.children,
     Key? key,
   })  : assert(
+          // coverage:ignore-start
           minItemWidth > 0,
           'minItemWidth has to be > 0. It instead was set to $minItemWidth',
         ),
@@ -88,7 +88,7 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
           maxItemsPerRow == null || maxItemsPerRow >= minItemsPerRow,
           'maxItemsPerRow can only be null or >= minItemsPerRow ($minItemsPerRow). It instead was set to $maxItemsPerRow',
         ),
-        super(key: key);
+        super(key: key); // coverage:ignore-end
 
   ///
   /// Method to generate a list of [ResponsiveGridRow]'s with spacing in between
