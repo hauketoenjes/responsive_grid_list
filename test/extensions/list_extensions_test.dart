@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   test(
-    'List should be joined with the seperator value',
+    'List should be joined with the separator value',
     () {
       final list = [1, 2, 3, 4, 5];
 
