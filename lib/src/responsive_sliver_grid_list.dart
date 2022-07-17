@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-
 import 'package:responsive_grid_list/src/abstract_responsive_grid_list.dart';
 
 ///
@@ -17,6 +16,7 @@ class ResponsiveSliverGridList extends AbstractResponsiveGridList {
     double? verticalGridMargin,
     MainAxisAlignment rowMainAxisAlignment = MainAxisAlignment.start,
     required List<Widget> children,
+    // coverage:ignore-start
   }) : super(
           minItemWidth: minItemWidth,
           minItemsPerRow: minItemsPerRow,
@@ -27,7 +27,7 @@ class ResponsiveSliverGridList extends AbstractResponsiveGridList {
           verticalGridMargin: verticalGridMargin,
           rowMainAxisAlignment: rowMainAxisAlignment,
           children: children,
-        );
+        ); // coverage:ignore-end
 
   @override
   Widget build(BuildContext context) {
