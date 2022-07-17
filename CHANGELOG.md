@@ -1,7 +1,14 @@
+## [1.2.5] - 17.07.2022
+
+- Update dependencies
+- Add tests
+
 ## [1.2.4] - 04.03.2022
+
 - Add `minItemsPerRow` property
 
 ## [1.2.3] - 20.10.2021
+
 - Add `maxItemsPerRow` property
 - Add `ResponsiveGridListBuilder` to allow usage with any List / Column.
 
@@ -19,6 +26,7 @@
 - Added ability to customize horizontal and vertical spacing between grid items with `horizontalGridSpacing` and `verticalGridSpacing`
 
 ### Migrating from version [1.1.0]
+
 - Replace `spacing` with `horizontalGridSpacing` and `verticalGridSpacing`
 
 ## [1.1.0] - 08.03.2021
@@ -32,4 +40,4 @@
 ## [1.0.0] - 11.02.2021
 
 - Initial Release of responsive_grid_list
-- `ResponsiveGridList` and `ResponsiveSliverGridList` are available 
+- `ResponsiveGridList` and `ResponsiveSliverGridList` are available
