@@ -1,3 +1,11 @@
+## [1.3.0] - 07.09.2022
+
+- Add the possibility to pass `ListViewBuilderOptions` to the `ResponsiveGridList` widget
+- Add the possibility to pass `SliverChildBuilderDelegateOptions` to the `ResponsiveSliverGridList` widget
+- Deprecate the `shrinkWrap` property of `ResponsiveGridList`. Use `listViewBuilderOptions.shrinkWrap` instead.
+- Update dart version constraints to >=2.17.0
+- Use very_good_analysis as linter
+
 ## [1.2.5] - 17.07.2022
 
 - Update dependencies

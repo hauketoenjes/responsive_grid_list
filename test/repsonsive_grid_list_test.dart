@@ -19,15 +19,15 @@ void main() {
               verticalGridMargin: 16,
               rowMainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Item"),
-                Text("Item"),
+                Text('Item'),
+                Text('Item'),
               ],
             ),
           );
 
           await tester.pumpWidget(list);
 
-          expect(find.text("Item"), findsNWidgets(2));
+          expect(find.text('Item'), findsNWidgets(2));
         },
       );
     },

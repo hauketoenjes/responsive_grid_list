@@ -4,13 +4,41 @@ import 'package:responsive_grid_list/src/extensions/list_extensions.dart';
 import 'package:responsive_grid_list/src/responsive_grid_row.dart';
 
 ///
-/// Abstract class providing the method [getResponsiveGridListItems] to calculate
-/// the most fitting items in row with [horizontalGridSpacing], [verticalGridSpacing]
-///  and [minItemWidth].
+/// Abstract class providing the method [getResponsiveGridListItems] to
+/// calculate the most fitting items in row with [horizontalGridSpacing],
+/// [verticalGridSpacing] and [minItemWidth].
 ///
-/// The maximum number of items per row can be constrained with [maxItemsPerRow].
+/// The maximum number of items per row can be constrained with
+/// [maxItemsPerRow].
 ///
 abstract class AbstractResponsiveGridList extends StatelessWidget {
+  /// Constructor of [AbstractResponsiveGridList].
+  const AbstractResponsiveGridList({
+    required this.minItemWidth,
+    required this.minItemsPerRow,
+    this.maxItemsPerRow,
+    required this.horizontalGridSpacing,
+    required this.verticalGridSpacing,
+    this.horizontalGridMargin,
+    this.verticalGridMargin,
+    required this.rowMainAxisAlignment,
+    required this.children,
+    super.key,
+  })  : assert(
+          // coverage:ignore-start
+          minItemWidth > 0,
+          'minItemWidth has to be > 0. It instead was set to $minItemWidth',
+        ),
+        assert(
+          minItemsPerRow > 0,
+          'minItemsPerRow has to be > 0. It instead was set to $minItemsPerRow',
+        ),
+        assert(
+          maxItemsPerRow == null || maxItemsPerRow >= minItemsPerRow,
+          'maxItemsPerRow can only be null or >= minItemsPerRow '
+          '($minItemsPerRow). It instead was set to $maxItemsPerRow',
+        );
+
   ///
   /// Children of the resulting grid list.
   ///
@@ -33,9 +61,10 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
   /// Maximum items to show per row. By default the package shows all items that
   /// fit into the available space according to [minItemWidth].
   ///
-  /// Note that this should only be used when limiting items on large screens since
-  /// it will stretch [maxItemsPerRow] items across the whole width when maximum
-  /// is reached. This can result in a large difference to [minItemWidth].
+  /// Note that this should only be used when limiting items on large screens
+  /// since it will stretch [maxItemsPerRow] items across the whole width
+  /// when maximum is reached. This can result in a large difference to
+  /// [minItemWidth].
   ///
   final int? maxItemsPerRow;
 
@@ -62,33 +91,7 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
   ///
   /// [MainAxisAlignment] of each row in the grid list.
   ///
-  final MainAxisAlignment rowMainAxisAlignment;
-
-  const AbstractResponsiveGridList({
-    required this.minItemWidth,
-    required this.minItemsPerRow,
-    this.maxItemsPerRow,
-    required this.horizontalGridSpacing,
-    required this.verticalGridSpacing,
-    this.horizontalGridMargin,
-    this.verticalGridMargin,
-    required this.rowMainAxisAlignment,
-    required this.children,
-    Key? key,
-  })  : assert(
-          // coverage:ignore-start
-          minItemWidth > 0,
-          'minItemWidth has to be > 0. It instead was set to $minItemWidth',
-        ),
-        assert(
-          minItemsPerRow > 0,
-          'minItemsPerRow has to be > 0. It instead was set to $minItemsPerRow',
-        ),
-        assert(
-          maxItemsPerRow == null || maxItemsPerRow >= minItemsPerRow,
-          'maxItemsPerRow can only be null or >= minItemsPerRow ($minItemsPerRow). It instead was set to $maxItemsPerRow',
-        ),
-        super(key: key); // coverage:ignore-end
+  final MainAxisAlignment rowMainAxisAlignment; // coverage:ignore-end
 
   ///
   /// Method to generate a list of [ResponsiveGridRow]'s with spacing in between
