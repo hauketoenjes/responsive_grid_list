@@ -35,7 +35,7 @@ ResponsiveGridList(
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
     minItemsPerRow: 2, // The minimum items to show in a single row. Takes precedence over minItemWidth
     maxItemsPerRow: 5, // The maximum items to show in a single row. Can be useful on large screens
-    shrinkWrap: true, // shrinkWrap property of the ListView.builder()
+    listViewBuilderOptions: ListViewBuilderOptions(), // Options that are getting passed to the ListView.builder() function
     children: [...], // The list of widgets in the list
 );
 ```
@@ -53,6 +53,7 @@ ResponsiveSliverGridList(
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
     minItemsPerRow: 2, // The minimum items to show in a single row. Takes precedence over minItemWidth
     maxItemsPerRow: 5, // The maximum items to show in a single row. Can be useful on large screens
+    sliverChildBuilderDelegateOptions: SliverChildBuilderDelegateOptions(), // Options that are getting passed to the SliverChildBuilderDelegate() function
     children: [...], // The list of widgets in the list
 );
 ```
