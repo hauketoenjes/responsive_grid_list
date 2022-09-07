@@ -1,3 +1,8 @@
+## [1.3.0] - 17.07.2022
+
+- Update dart version constraints to >=2.17.0
+- Use very_good_analysis as linter
+
 ## [1.2.5] - 17.07.2022
 
 - Update dependencies

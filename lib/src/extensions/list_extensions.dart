@@ -1,10 +1,11 @@
+/// Generic Join extension for [List]s.
 extension GenericJoin<T> on List<T> {
   ///
   /// Extension which joins [separator] in between the items in [List].
   ///
   /// Does the same as the [join()] method but instead of returning a string,
-  /// retuns the list with seperators in between. Mainly used to join Widgets in
-  /// between other widgets.
+  /// returns the list with separators in between. Mainly used to join Widgets
+  /// in between other widgets.
   ///
   /// See: https://api.dart.dev/stable/dart-core/Iterable/join.html
   ///
@@ -16,8 +17,9 @@ extension GenericJoin<T> on List<T> {
 
     out.add(iterator.current);
     while (iterator.moveNext()) {
-      out.add(separator);
-      out.add(iterator.current);
+      out
+        ..add(separator)
+        ..add(iterator.current);
     }
     return out;
   }

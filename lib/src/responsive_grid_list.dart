@@ -6,32 +6,24 @@ import 'package:responsive_grid_list/src/abstract_responsive_grid_list.dart';
 /// [ListView.builder()]
 ///
 class ResponsiveGridList extends AbstractResponsiveGridList {
-  /// shrinkWrap property of [ListView.builder].
-  final bool shrinkWrap;
-
+  /// Constructor of [ResponsiveGridList].
   const ResponsiveGridList({
-    required double minItemWidth,
-    int minItemsPerRow = 1,
-    int? maxItemsPerRow,
-    double horizontalGridSpacing = 16,
-    double verticalGridSpacing = 16,
-    double? horizontalGridMargin,
-    double? verticalGridMargin,
-    MainAxisAlignment rowMainAxisAlignment = MainAxisAlignment.start,
+    super.key,
+    required super.minItemWidth,
+    super.minItemsPerRow = 1,
+    super.maxItemsPerRow,
+    super.horizontalGridSpacing = 16,
+    super.verticalGridSpacing = 16,
+    super.horizontalGridMargin,
+    super.verticalGridMargin,
+    super.rowMainAxisAlignment = MainAxisAlignment.start,
     this.shrinkWrap = false,
-    required List<Widget> children,
+    required super.children,
     // coverage:ignore-start
-  }) : super(
-          minItemWidth: minItemWidth,
-          minItemsPerRow: minItemsPerRow,
-          maxItemsPerRow: maxItemsPerRow,
-          horizontalGridSpacing: horizontalGridSpacing,
-          verticalGridSpacing: verticalGridSpacing,
-          horizontalGridMargin: horizontalGridMargin,
-          verticalGridMargin: verticalGridMargin,
-          rowMainAxisAlignment: rowMainAxisAlignment,
-          children: children,
-        ); // coverage:ignore-end
+  });
+
+  /// shrinkWrap property of [ListView.builder].
+  final bool shrinkWrap; // coverage:ignore-end
 
   @override
   Widget build(BuildContext context) {

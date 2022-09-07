@@ -22,7 +22,7 @@ void main() {
         ),
       );
 
-      final itemFinder = find.text("Item");
+      final itemFinder = find.text('Item');
       final itemBoxFinder = find.byWidgetPredicate(
         (e) => e is SizedBox && e.width == 20,
       );

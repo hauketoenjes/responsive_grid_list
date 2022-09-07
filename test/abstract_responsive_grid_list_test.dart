@@ -18,17 +18,17 @@ void main() {
             verticalGridMargin: 16,
             rowMainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Item"),
-              Text("Item"),
-              Text("Item"),
-              Text("Item"),
-              Text("Item"),
+              Text('Item'),
+              Text('Item'),
+              Text('Item'),
+              Text('Item'),
+              Text('Item'),
             ],
           );
 
           await tester.pumpWidget(list);
 
-          expect(find.text("Item"), findsNWidgets(5));
+          expect(find.text('Item'), findsNWidgets(5));
         },
       );
     },
@@ -37,24 +37,16 @@ void main() {
 
 class AbstractResponsiveGridListTest extends AbstractResponsiveGridList {
   const AbstractResponsiveGridListTest({
-    required double minItemWidth,
-    required int minItemsPerRow,
-    required double horizontalGridSpacing,
-    required double verticalGridSpacing,
-    required double horizontalGridMargin,
-    required double verticalGridMargin,
-    required MainAxisAlignment rowMainAxisAlignment,
-    required List<Widget> children,
-  }) : super(
-          minItemWidth: minItemWidth,
-          minItemsPerRow: minItemsPerRow,
-          horizontalGridSpacing: horizontalGridSpacing,
-          verticalGridSpacing: verticalGridSpacing,
-          rowMainAxisAlignment: rowMainAxisAlignment,
-          verticalGridMargin: verticalGridMargin,
-          horizontalGridMargin: horizontalGridMargin,
-          children: children,
-        );
+    super.key,
+    required super.minItemWidth,
+    required super.minItemsPerRow,
+    required super.horizontalGridSpacing,
+    required super.verticalGridSpacing,
+    required super.horizontalGridMargin,
+    required super.verticalGridMargin,
+    required super.rowMainAxisAlignment,
+    required super.children,
+  });
 
   @override
   Widget build(BuildContext context) {

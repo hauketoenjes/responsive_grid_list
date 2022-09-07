@@ -1,6 +1,6 @@
 [![Pub Version](https://img.shields.io/pub/v/responsive_grid_list)](https://pub.dev/packages/responsive_grid_list)
 [![codecov](https://codecov.io/gh/hauketoenjes/responsive_grid_list/branch/main/graph/badge.svg?token=RFLRJ6R0U0)](https://codecov.io/gh/hauketoenjes/responsive_grid_list)
-[![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
+[![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
 
 # Responsive Grid List
 
@@ -109,4 +109,4 @@ class MyResponsiveGridList extends AbstractResponsiveGridList{
 - [x] Tests
 - [ ] Optional delta in which the width of the children can vary instead of setting the just the minimum width
 - [ ] Option to constrain the height of the items to a fixed value
-  - Probably better to use the Flutter `GridView` instead. It offers `aspectRation`.
+  - Probably better to use the Flutter `GridView` instead. It offers `aspectRatio`.

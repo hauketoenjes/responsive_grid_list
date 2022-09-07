@@ -6,28 +6,20 @@ import 'package:responsive_grid_list/src/abstract_responsive_grid_list.dart';
 /// [SliverList] with a [SliverChildBuilderDelegate]
 ///
 class ResponsiveSliverGridList extends AbstractResponsiveGridList {
+  /// Constructor of [ResponsiveSliverGridList].
   const ResponsiveSliverGridList({
-    required double minItemWidth,
-    int minItemsPerRow = 1,
-    int? maxItemsPerRow,
-    double horizontalGridSpacing = 16,
-    double verticalGridSpacing = 16,
-    double? horizontalGridMargin,
-    double? verticalGridMargin,
-    MainAxisAlignment rowMainAxisAlignment = MainAxisAlignment.start,
-    required List<Widget> children,
+    super.key,
+    required super.minItemWidth,
+    super.minItemsPerRow = 1,
+    super.maxItemsPerRow,
+    super.horizontalGridSpacing = 16,
+    super.verticalGridSpacing = 16,
+    super.horizontalGridMargin,
+    super.verticalGridMargin,
+    super.rowMainAxisAlignment = MainAxisAlignment.start,
+    required super.children,
     // coverage:ignore-start
-  }) : super(
-          minItemWidth: minItemWidth,
-          minItemsPerRow: minItemsPerRow,
-          maxItemsPerRow: maxItemsPerRow,
-          horizontalGridSpacing: horizontalGridSpacing,
-          verticalGridSpacing: verticalGridSpacing,
-          horizontalGridMargin: horizontalGridMargin,
-          verticalGridMargin: verticalGridMargin,
-          rowMainAxisAlignment: rowMainAxisAlignment,
-          children: children,
-        ); // coverage:ignore-end
+  }); // coverage:ignore-end
 
   @override
   Widget build(BuildContext context) {

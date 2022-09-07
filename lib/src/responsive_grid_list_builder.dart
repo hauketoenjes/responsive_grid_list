@@ -1,14 +1,30 @@
 import 'package:flutter/widgets.dart';
-
 import 'package:responsive_grid_list/src/abstract_responsive_grid_list.dart';
 
 ///
-/// An [AbstractResponsiveGridList] returning the grid items as list of [Widget]s
-/// in a builder function. This allows for use in any kind of List or Column.
+/// An [AbstractResponsiveGridList] returning the grid items as list of
+/// [Widget]s in a builder function. This allows for use in any kind of
+/// List or Column.
 ///
 class ResponsiveGridListBuilder extends AbstractResponsiveGridList {
-  ///
-  ///  Builder Function to use [items] in any kind of list.
+  /// Constructor of [ResponsiveGridListBuilder].
+  const ResponsiveGridListBuilder({
+    super.key,
+    required super.minItemWidth,
+    super.minItemsPerRow = 1,
+    super.maxItemsPerRow,
+    super.horizontalGridSpacing = 16,
+    super.verticalGridSpacing = 16,
+    super.horizontalGridMargin,
+    super.verticalGridMargin,
+    super.rowMainAxisAlignment = MainAxisAlignment.start,
+    required List<Widget> gridItems,
+    required this.builder,
+  }) : super(
+          children: gridItems,
+        );
+
+  ///  Builder Function to use the returned `items` in any kind of list.
   ///
   /// e.g:
   ///
@@ -23,31 +39,7 @@ class ResponsiveGridListBuilder extends AbstractResponsiveGridList {
   ///   },
   /// )
   /// ```
-  ///
   final Widget Function(BuildContext context, List<Widget> items) builder;
-
-  const ResponsiveGridListBuilder({
-    required double minItemWidth,
-    int minItemsPerRow = 1,
-    int? maxItemsPerRow,
-    double horizontalGridSpacing = 16,
-    double verticalGridSpacing = 16,
-    double? horizontalGridMargin,
-    double? verticalGridMargin,
-    MainAxisAlignment rowMainAxisAlignment = MainAxisAlignment.start,
-    required List<Widget> gridItems,
-    required this.builder,
-  }) : super(
-          minItemWidth: minItemWidth,
-          minItemsPerRow: minItemsPerRow,
-          maxItemsPerRow: maxItemsPerRow,
-          horizontalGridSpacing: horizontalGridSpacing,
-          verticalGridSpacing: verticalGridSpacing,
-          horizontalGridMargin: horizontalGridMargin,
-          verticalGridMargin: verticalGridMargin,
-          rowMainAxisAlignment: rowMainAxisAlignment,
-          children: gridItems,
-        );
 
   @override
   Widget build(BuildContext context) {

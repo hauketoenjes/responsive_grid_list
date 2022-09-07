@@ -19,9 +19,9 @@ void main() {
               verticalGridMargin: 16,
               rowMainAxisAlignment: MainAxisAlignment.center,
               gridItems: const [
-                Text("Item"),
-                Text("Item"),
-                Text("Item"),
+                Text('Item'),
+                Text('Item'),
+                Text('Item'),
               ],
               builder: (BuildContext context, List<Widget> items) {
                 return Column(
@@ -33,7 +33,7 @@ void main() {
 
           await tester.pumpWidget(list);
 
-          expect(find.text("Item"), findsNWidgets(3));
+          expect(find.text('Item'), findsNWidgets(3));
           expect(find.byType(Column), findsOneWidget);
         },
       );
