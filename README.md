@@ -29,7 +29,7 @@ A Responsive Grid List which uses `ListView.builder()` internally.
 ```dart
 ResponsiveGridList(
     horizontalGridSpacing: 16, // Horizontal space between grid items
-    horizontalGridSpacing: 16, // Vertical space between grid items
+    verticalGridSpacing: 16, // Vertical space between grid items
     horizontalGridMargin: 50, // Horizontal space around the grid
     verticalGridMargin: 50, // Vertical space around the grid
     minItemWidth: 300, // The minimum item width (can be smaller, if the layout constraints are smaller)
