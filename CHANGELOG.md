@@ -1,3 +1,8 @@
+## [1.3.1] - 30.01.2023
+
+- Added screenshots to pubspec.yaml
+- Fixed typo in README
+
 ## [1.3.0] - 07.09.2022
 
 - Add the possibility to pass `ListViewBuilderOptions` to the `ResponsiveGridList` widget
