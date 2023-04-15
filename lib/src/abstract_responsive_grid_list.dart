@@ -16,13 +16,13 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
   const AbstractResponsiveGridList({
     required this.minItemWidth,
     required this.minItemsPerRow,
-    this.maxItemsPerRow,
     required this.horizontalGridSpacing,
     required this.verticalGridSpacing,
-    this.horizontalGridMargin,
-    this.verticalGridMargin,
     required this.rowMainAxisAlignment,
     required this.children,
+    this.maxItemsPerRow,
+    this.horizontalGridMargin,
+    this.verticalGridMargin,
     super.key,
   })  : assert(
           // coverage:ignore-start

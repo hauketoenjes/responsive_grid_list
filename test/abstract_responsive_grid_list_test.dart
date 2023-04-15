@@ -37,7 +37,6 @@ void main() {
 
 class AbstractResponsiveGridListTest extends AbstractResponsiveGridList {
   const AbstractResponsiveGridListTest({
-    super.key,
     required super.minItemWidth,
     required super.minItemsPerRow,
     required super.horizontalGridSpacing,
@@ -46,6 +45,7 @@ class AbstractResponsiveGridListTest extends AbstractResponsiveGridList {
     required super.verticalGridMargin,
     required super.rowMainAxisAlignment,
     required super.children,
+    super.key,
   });
 
   @override

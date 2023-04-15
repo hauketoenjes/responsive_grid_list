@@ -1,3 +1,8 @@
+## [1.3.2] - 15.04.2023
+
+- Update dependencies
+- Apply updated linting rules
+
 ## [1.3.1] - 30.01.2023
 
 - Added screenshots to pubspec.yaml

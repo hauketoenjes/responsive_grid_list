@@ -12,11 +12,11 @@ import 'package:responsive_grid_list/src/extensions/list_extensions.dart';
 class ResponsiveGridRow extends StatelessWidget {
   /// Constructs a new [ResponsiveGridRow].
   const ResponsiveGridRow({
-    super.key,
     required this.rowItems,
     required this.spacing,
-    this.horizontalGridMargin,
     required this.itemWidth,
+    super.key,
+    this.horizontalGridMargin,
     this.rowMainAxisAlignment = MainAxisAlignment.start,
   });
 

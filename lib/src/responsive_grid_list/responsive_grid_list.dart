@@ -10,8 +10,9 @@ import 'package:responsive_grid_list/src/responsive_grid_list/list_view_builder_
 class ResponsiveGridList extends AbstractResponsiveGridList {
   /// Constructor of [ResponsiveGridList].
   const ResponsiveGridList({
-    super.key,
     required super.minItemWidth,
+    required super.children,
+    super.key,
     super.minItemsPerRow = 1,
     super.maxItemsPerRow,
     super.horizontalGridSpacing = 16,
@@ -19,7 +20,6 @@ class ResponsiveGridList extends AbstractResponsiveGridList {
     super.horizontalGridMargin,
     super.verticalGridMargin,
     super.rowMainAxisAlignment = MainAxisAlignment.start,
-    required super.children,
     @Deprecated('Use listViewBuilderOptions instead') this.shrinkWrap = false,
     this.listViewBuilderOptions,
     // coverage:ignore-start
