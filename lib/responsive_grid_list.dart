@@ -1,3 +1,4 @@
+/// Library for creating responsive grid lists.
 library responsive_grid_list;
 
 export 'src/abstract_responsive_grid_list.dart';

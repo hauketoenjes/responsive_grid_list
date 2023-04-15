@@ -9,8 +9,10 @@ import 'package:responsive_grid_list/src/abstract_responsive_grid_list.dart';
 class ResponsiveGridListBuilder extends AbstractResponsiveGridList {
   /// Constructor of [ResponsiveGridListBuilder].
   const ResponsiveGridListBuilder({
-    super.key,
     required super.minItemWidth,
+    required List<Widget> gridItems,
+    required this.builder,
+    super.key,
     super.minItemsPerRow = 1,
     super.maxItemsPerRow,
     super.horizontalGridSpacing = 16,
@@ -18,8 +20,6 @@ class ResponsiveGridListBuilder extends AbstractResponsiveGridList {
     super.horizontalGridMargin,
     super.verticalGridMargin,
     super.rowMainAxisAlignment = MainAxisAlignment.start,
-    required List<Widget> gridItems,
-    required this.builder,
   }) : super(
           children: gridItems,
         );

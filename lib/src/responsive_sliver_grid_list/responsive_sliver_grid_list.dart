@@ -9,8 +9,9 @@ import 'package:responsive_grid_list/src/responsive_sliver_grid_list/sliver_chil
 class ResponsiveSliverGridList extends AbstractResponsiveGridList {
   /// Constructor of [ResponsiveSliverGridList].
   const ResponsiveSliverGridList({
-    super.key,
     required super.minItemWidth,
+    required super.children,
+    super.key,
     super.minItemsPerRow = 1,
     super.maxItemsPerRow,
     super.horizontalGridSpacing = 16,
@@ -18,7 +19,6 @@ class ResponsiveSliverGridList extends AbstractResponsiveGridList {
     super.horizontalGridMargin,
     super.verticalGridMargin,
     super.rowMainAxisAlignment = MainAxisAlignment.start,
-    required super.children,
     this.sliverChildBuilderDelegateOptions,
     // coverage:ignore-start
   }); // coverage:ignore-end
