@@ -59,7 +59,7 @@ class ResponsiveGridRow extends StatelessWidget {
       spacedRowItems = [
         SizedBox(width: horizontalGridMargin),
         ...spacedRowItems,
-        SizedBox(width: horizontalGridMargin)
+        SizedBox(width: horizontalGridMargin),
       ];
     }
 

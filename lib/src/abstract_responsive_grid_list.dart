@@ -160,7 +160,7 @@ abstract class AbstractResponsiveGridList extends StatelessWidget {
       return [
         SizedBox(height: verticalGridMargin),
         ...responsiveGridListItems,
-        SizedBox(height: verticalGridMargin)
+        SizedBox(height: verticalGridMargin),
       ];
     }
 
