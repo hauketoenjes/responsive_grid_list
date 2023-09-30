@@ -1,3 +1,12 @@
+## [1.4.0] - 30.09.2023
+
+- Update dart version constraints to ">=2.17.0 <4.0.0"
+
+## [1.3.3] - 30.09.2023
+
+- Update dependencies
+- Fix typo in README
+
 ## [1.3.2] - 15.04.2023
 
 - Update dependencies
