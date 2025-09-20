@@ -1,3 +1,7 @@
+## [1.4.1] - 20.09.2025
+
+- Update packages
+
 ## [1.4.0] - 30.09.2023
 
 - Update dart version constraints to ">=2.17.0 <4.0.0"

@@ -75,3 +75,6 @@ build/
 
 # Test coverage
 coverage
+
+# FVM Version Cache
+.fvm/
